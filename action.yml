@@ -11,8 +11,6 @@ runs:
       name: Check env
       uses: andymckay/cancel-action@0.2
       if: "${{ env.COURSE_ID == '' || env.CM_ID == '' || github.repository == '' || env.GITHUB_PR_REGEX == ''}}"
-      shell: bash
     -
       name: Run script
       run: docker run -e COURSE_ID="${{env.COURSE_ID}}" -e CM_ID="${{env.CM_ID}}" -e GITHUB_REPO="${{ github.repository }}" -e GITHUB_PR_REGEX="${{env.GITHUB_PR_REGEX}}" -e GITHUB_ACCESS_TOKEN="${{ github.token }}" -e MOODLE_ACCESS_TOKEN="${{ secrets.MOODLE_ACCESS_TOKEN }}" --rm fox1209/gm_scripts:1.0.0  python main.py script2
-      shell: bash
