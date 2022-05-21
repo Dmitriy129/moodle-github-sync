@@ -10,7 +10,7 @@ runs:
     - 
       name: Check env
       uses: andymckay/cancel-action@0.2
-      if: "${{ env.COURSE_ID == '' || env.CM_ID == '' || github.repository == '' || env.GITHUB_PR_REGEX == '' || github.token == '' || secrets.MOODLE_ACCESS_TOKEN == '' }}"
+      if: "${{ env.COURSE_ID == '' || env.CM_ID == '' || github.repository == '' || env.GITHUB_PR_REGEX == ''}}"
       shell: bash
     -
       name: Run script
